@@ -1,0 +1,29 @@
+n=int(input("Enter the number of elements for the list: "))
+print("Enter the values: ")
+l=list(input() for i in range(n))
+def separate_int_str_list(l):
+    int_l=[]
+    str_l=[]
+    for i in l:
+        try:
+            if(int(i)):
+                int_l.append(i)
+        except ValueError:
+            str_l.append(i)
+    return int_l,str_l
+int_l,str_l=separate_int_str_list(l)
+file1=open("int_data.txt","w")
+for i in int_l:
+    file1.write(" "+i)
+file1.close()
+file2=open("str_data.txt","w")
+for i in str_l:
+    file2.write(" "+i)
+file2.close()
+
+file1=open("int_data.txt","r")
+print("Integer list file: ",file1.read())
+file1.close()
+file2=open("str_data.txt","r")
+print("String list fie: ",file2.read())
+file2.close()
