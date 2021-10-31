@@ -1,0 +1,18 @@
+l1=list()
+l2=list()
+n=int(input("Enter length of list1: "))
+print("Enter values for list1: ")
+for i in range(0,n):
+    l1.append(input())
+m=int(input("Enter length of list2: "))
+print("Enter values for list2: ")
+for i in range(0,m):
+    l2.append(input())
+def commonvaluesinlist(l1,l2):
+    result=False
+    for i in l1:
+        for j in l2:
+            if i==j:
+                result=True
+                return result
+commonvaluesinlist(l1,l2)    
